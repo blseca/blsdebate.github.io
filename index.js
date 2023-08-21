@@ -36,8 +36,5 @@ window.addEventListener('load',()=>{
             word.style.rotate = `${Math.round((Math.random()-0.5)*5)*2*Math.PI}rad`
         }
     })
-    function join() {
-        window.location.href="https://docs.google.com/forms/d/e/1FAIpQLSeqpLe1N5PdvtJUOlWMA4GhscD7PDx8EgERprWXn5mmn3D__Q/viewform"
-    }
 })
 
