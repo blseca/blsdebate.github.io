@@ -16,25 +16,25 @@ window.addEventListener('load',()=>{
         p.setAttribute("depth", depth)
         header.appendChild(p)
     }
+    window.addEventListener('scroll', (e)=>{
+        const words = document.querySelectorAll('.banner-word')
+        for(let word of words){
+            depth = parseFloat(word.getAttribute("depth"))
+            word.style.translate = `0px ${-window.scrollY/(depth/3 + 1.5)}px`
+        }
+    })
+    
+    document.querySelector("#join").addEventListener('mouseover',()=>{
+        const words = document.querySelectorAll('.banner-word')
+        for(let word of words){
+            let depth = parseFloat(word.getAttribute("depth"))
+            depth += (Math.random()-0.3) *10
+            let size = 3/(depth/3+2);
+            word.style.filter = `blur(${Math.abs(depth-3)}px)`
+            word.style.scale = size
+    
+            word.style.rotate = `${Math.round((Math.random()-0.5)*5)*2*Math.PI}rad`
+        }
+    })
 })
 
-window.addEventListener('scroll', (e)=>{
-    const words = document.querySelectorAll('.banner-word')
-    for(let word of words){
-        depth = parseFloat(word.getAttribute("depth"))
-        word.style.translate = `0px ${-window.scrollY/(depth/3 + 1.5)}px`
-    }
-})
-
-document.querySelector("#join").addEventListener('mouseover',()=>{
-    const words = document.querySelectorAll('.banner-word')
-    for(let word of words){
-        let depth = parseFloat(word.getAttribute("depth"))
-        depth += (Math.random()-0.3) *10
-        let size = 3/(depth/3+2);
-        word.style.filter = `blur(${Math.abs(depth-3)}px)`
-        word.style.scale = size
-
-        word.style.rotate = `${Math.round((Math.random()-0.5)*5)*2*Math.PI}rad`
-    }
-})
