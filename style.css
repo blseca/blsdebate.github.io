@@ -22,7 +22,9 @@ p{
     font-size: 18px;
     line-height: 1.5;
 }
-
+p.banner-word {
+    font-family: "Lora", serif;
+}
 h1{
     font-size: 3em;
     text-align: center;
@@ -35,8 +37,8 @@ h2{
 header{
     /* background-color: black; */
     background-color: rgb(97, 26, 196);
-
-    /* background-image: linear-gradient(to bottom, #5e1ac8, #855ddc, #ab93ec, #d3c9f7, #ffffff); */
+    
+    background-image: linear-gradient(to top, #FFFFFF, #E5ccf4, #A080E1,  #5C509E, #382D73)
     position: relative;
     z-index: 0;
     width: 100%;
@@ -62,11 +64,12 @@ header p{
 }
 
 #join{
-    background-color: white;
+    background-color: #492980;
     border:none;
+    border-radius:50px;
     font-size: 1.5em;
     padding: 5px 20px;
-    color: rgb(97, 26, 196);
+    color: white;
     font-weight: bold;
     transition: transform 0.2s ease;
 }
