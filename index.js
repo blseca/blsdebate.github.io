@@ -30,11 +30,11 @@ document.querySelector("#join").addEventListener('mouseover',()=>{
     const words = document.querySelectorAll('.banner-word')
     for(let word of words){
         let depth = parseFloat(word.getAttribute("depth"))
-        depth += (Math.random()-0.2) *10
+        depth += (Math.random()-0.3) *10
         let size = 3/(depth/3+2);
         word.style.filter = `blur(${Math.abs(depth-3)}px)`
         word.style.scale = size
 
-        word.style.rotate = `${(Math.random()-0.5)*10}rad`
+        word.style.rotate = `${Math.round((Math.random()-0.5)*5)*2*Math.PI}rad`
     }
 })

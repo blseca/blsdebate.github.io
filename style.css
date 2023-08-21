@@ -50,7 +50,6 @@ header{
     overflow: hidden;
 }
 
-
 header p{
     position: absolute;
     will-change: transform;
