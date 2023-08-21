@@ -35,7 +35,7 @@ h2{
 }
 
 header {
-    background-image: linear-gradient(to top, #FFFFFF, #E5ccf4, #A080E1,  #5C509E, #382D73)
+    background-image: linear-gradient(to top, #FFFFFF, #E5ccf4, #A080E1,  #5C509E, #382D73);
     position: relative;
     z-index: 0;
     width: 100%;
