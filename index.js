@@ -1,14 +1,40 @@
-const words = ["Public Forum", "Debate", "Speech", "Congress", "\"website\"", "Carolineg Song", "Water"]
+const words = ["MDSL", "hydrate!", "Words matter", "Speak Now", "Resolved", "Carolineg Song", "Affirm", "Negate"]
 const wordCount = window.innerWidth / 40
 window.addEventListener('load',()=>{
     const header = document.querySelector("header")
     for(let i = 0; i < wordCount; i++){
         let p = document.createElement("p")
+        p.className = "banner-word"
         p.innerHTML = words[Math.floor(Math.random()*words.length)]
-        let depth = Math.random()*15-3
-        p.style.transform = `translateZ(${-depth}px)`
-        p.style.translate = `${(Math.random()-0.5)*100*(depth+4)/4}vw ${(Math.random()*1.3-0.5)*400*(depth+4)/4}px`
-        p.style.filter = `blur(${Math.abs(depth)}px)`
+        let depth = Math.random()*15 - 3
+        let size = 3/(depth/3+2);
+        if(depth>1) p.style.zIndex = "-1"
+        p.style.left = `${(Math.random())*100}vw`
+        p.style.top = `${(Math.random()-0.1)*500}px`
+        p.style.filter = `blur(${Math.abs(depth-3)}px)`
+        p.style.scale = size
+        p.setAttribute("depth", depth)
         header.appendChild(p)
+    }
+})
+
+window.addEventListener('scroll', (e)=>{
+    const words = document.querySelectorAll('.banner-word')
+    for(let word of words){
+        depth = parseFloat(word.getAttribute("depth"))
+        word.style.translate = `0px ${-window.scrollY/(depth/3 + 1.5)}px`
+    }
+})
+
+document.querySelector("#join").addEventListener('mouseover',()=>{
+    const words = document.querySelectorAll('.banner-word')
+    for(let word of words){
+        let depth = parseFloat(word.getAttribute("depth"))
+        depth += (Math.random()-0.2) *10
+        let size = 3/(depth/3+2);
+        word.style.filter = `blur(${Math.abs(depth-3)}px)`
+        word.style.scale = size
+
+        word.style.rotate = `${(Math.random()-0.5)*10}rad`
     }
 })
