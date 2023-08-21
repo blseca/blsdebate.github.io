@@ -1,4 +1,4 @@
-const words = ["MSDL", "Hydrate!", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate"]
+const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
 const wordCount = window.innerWidth / 40
 window.addEventListener('load',()=>{
     const header = document.querySelector("header")
