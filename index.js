@@ -10,7 +10,7 @@ window.addEventListener('load',()=>{
         let size = 3/(depth/3+2);
         if(depth>1) p.style.zIndex = "-1"
         p.style.left = `${(Math.random())*100}vw`
-        p.style.top = `${(Math.random()-0.1)*500}px`
+        p.style.top = `${(Math.random()-0.1)*600}px`
         p.style.filter = `blur(${Math.abs(depth-3)}px)`
         p.style.scale = size
         p.setAttribute("depth", depth)
@@ -20,7 +20,7 @@ window.addEventListener('load',()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
             depth = parseFloat(word.getAttribute("depth"))
-            word.style.translate = `0px ${-window.scrollY/(depth/3 + 1.5)}px`
+            word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
         }
     })
     
@@ -28,7 +28,7 @@ window.addEventListener('load',()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
             let depth = parseFloat(word.getAttribute("depth"))
-            depth += (Math.random()-0.3) *10
+            depth += (Math.random()-0.4) *10
             let size = 3/(depth/3+2);
             word.style.filter = `blur(${Math.abs(depth-3)}px)`
             word.style.scale = size
