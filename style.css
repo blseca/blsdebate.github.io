@@ -34,10 +34,7 @@ h2{
     font-size: 2em;
 }
 
-header{
-    /* background-color: black; */
-    background-color: rgb(97, 26, 196);
-    
+header {
     background-image: linear-gradient(to top, #FFFFFF, #E5ccf4, #A080E1,  #5C509E, #382D73)
     position: relative;
     z-index: 0;
