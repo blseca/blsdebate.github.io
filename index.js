@@ -31,8 +31,6 @@ window.addEventListener('load',()=>{
             let size = 3/(depth/3+2);
             word.style.filter = `blur(${Math.min(Math.abs(depth-3), 10)}px)`
             word.style.scale = size
-    
-            // word.style.rotate = `${Math.round((Math.random()-0.5)*5)*2*Math.PI}rad`
         }
     })
 })
