@@ -1,6 +1,6 @@
-const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
-const wordCount = window.innerWidth / 40
-
+const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card", "Nuclear War", "USFG", "Voting", "Union", "Rails", "Nuclear Power", "Liberty", "Freedom"]
+const wordCount = 25; //window.innerWidth / 40
+//turned into 25 because was getting laggy when minimized
 window.addEventListener('load',()=>{
     const header = document.querySelector("header")
     for(let i = 0; i < wordCount; i++){
