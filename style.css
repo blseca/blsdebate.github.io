@@ -7,6 +7,7 @@ body, html{
     height: 100%;
     font-family: "lora", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
+    overflow-x: hidden;
 }
 
 * {
@@ -87,6 +88,7 @@ section{
     padding: 30px;
     max-width: 900px;
     margin: auto;
+    position: relative;
 }
 
 #thing1 {
@@ -132,11 +134,20 @@ section{
     display: flex;
     width: 100vw;
     height: min(max(100px, 50vw), 500px);
-    gap: 10px;
+    gap: 4vmin;
     max-width: initial;
-    margin: 0;
-    overflow: scroll;
+    margin: 0rem;
+    overflow: hidden;
+    user-select: none;
 }
+
+#images > .image {
+    object-position: 100% 50%;
+    object-fit: cover;
+    height: 56vmin;
+    width: 40vmin;}
+    
+section#images {left: 50%;}
 
 #images * {
     height: 100%;
