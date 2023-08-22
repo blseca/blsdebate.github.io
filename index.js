@@ -1,5 +1,6 @@
 const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
 const wordCount = window.innerWidth / 40
+
 window.addEventListener('load',()=>{
     const header = document.querySelector("header")
     for(let i = 0; i < wordCount; i++){
@@ -15,14 +16,15 @@ window.addEventListener('load',()=>{
         p.setAttribute("depth", depth)
         header.appendChild(p)
     }
-    window.addEventListener('scroll', (e)=>{
+
+    window.addEventListener('scroll', ()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
             depth = parseFloat(word.getAttribute("depth"))
             word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
         }
     })
-    
+
     document.querySelector("#join").addEventListener('mouseover',()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
