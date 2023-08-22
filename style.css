@@ -7,11 +7,7 @@ body, html{
     height: 100%;
     font-family: "lora", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
-
-}
-
-body{
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 * {
@@ -20,7 +16,7 @@ body{
 
 img{
     width:100%;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 
 p{
@@ -125,6 +121,7 @@ section{
     background-color: rgb(97, 26, 196);
     color: white;
     transform: scale(1.1);
+    border-radius: 10px;
 }
 
 #topics > a:active {
@@ -132,30 +129,29 @@ section{
     color: white;
     transform: scale(0.9);
 }
-#images-container{
-    overflow: hidden;
-    margin: 0rem;
-    width: 100%;
-    max-width: unset;
-}
 
 #images {
     display: flex;
+    width: 100vw;
     height: min(max(100px, 50vw), 500px);
-    gap: 50px;
+    gap: 4vmin;
     max-width: initial;
     margin: 0rem;
+    overflow: hidden;
     user-select: none;
 }
 
 #images > .image {
     object-position: 100% 50%;
     object-fit: cover;
-    width: 50vmin;
-}
+    height: 56vmin;
+    width: 40vmin;}
     
+section#images {left: 50%;}
+
 #images * {
     height: 100%;
     width: unset;
     flex-shrink: 0;
+    
 }
