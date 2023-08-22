@@ -7,6 +7,9 @@ body, html{
     height: 100%;
     font-family: "lora", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
+}
+
+body{
     overflow-x: hidden;
 }
 
