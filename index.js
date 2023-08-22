@@ -1,65 +1,70 @@
-const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
-const wordCount = window.innerWidth / 40
-window.addEventListener('load',()=>{
-    const header = document.querySelector("header")
-    for(let i = 0; i < wordCount; i++){
-        let p = document.createElement("p")
-        p.className = "banner-word"
-        p.innerHTML = words[Math.floor(Math.random()*words.length)]
-        let depth = Math.random()*15 - 3
-        let size = 3/(depth/3+2);
-        p.style.left = `${(Math.random())*100}vw`
-        p.style.top = `${(Math.random()-0.1)*600}px`
-        p.style.filter = `blur(${Math.abs(depth-3)}px)`
-        p.style.scale = size
-        p.setAttribute("depth", depth)
-        header.appendChild(p)
-    }
-    window.addEventListener('scroll', (e)=>{
-        const words = document.querySelectorAll('.banner-word')
-        for(let word of words){
-            depth = parseFloat(word.getAttribute("depth"))
-            word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
-        }
-    })
-    
-    document.querySelector("#join").addEventListener('mouseover',()=>{
-        const words = document.querySelectorAll('.banner-word')
-        for(let word of words){
-            let depth = parseFloat(word.getAttribute("depth"))
-            depth = (Math.random() *15 -3 + depth)/2
-            let size = 3/(depth/3+2);
-            word.style.filter = `blur(${Math.min(Math.abs(depth-3), 10)}px)`
-            word.style.scale = size
-        }
-    })
-    const track = document.getElementById("images");
-    window.onmousedown = e => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLS SPEECH & DEBATE</title>
+    <link rel="stylesheet" href="style.css">
 
-        track.dataset.mouseDownAt = e.clientX;
-    }
-    window.onmousemove = e => {
-        if(track.dataset.mouseDownAt === "0") return;
-        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-        const maxDelta = window.innerWidth / 2;
-        const percentage = (mouseDelta / maxDelta) * 100;
-        const nextPercentageUncon = parseFloat(track.dataset.prevPercentage) + percentage;
-        const nextPercentage = Math.max(Math.min(nextPercentageUncon, 0), -100);
-        track.dataset.percentage = nextPercentage;
-        track.animate({
-            transform: `translate(${nextPercentage}%, 0%)`
-        }, { duration: 1200, fill: "forwards" });
-          
-        for(const image of track.getElementsByClassName("image")) {
-            image.animate({
-              objectPosition: `${100 + nextPercentage}% center`
-            }, { duration: 1200, fill: "forwards" });
+    <link rel="icon" type="image/x-icon" href="/images/8a459578b0a28847c3f8a9b5e02d0651.ico">
+    <script src="index.js"></script>
+</head>
+<body>
+    <script>
+        
+        function join() {
+            window.location.href="https://docs.google.com/forms/d/e/1FAIpQLSeqpLe1N5PdvtJUOlWMA4GhscD7PDx8EgERprWXn5mmn3D__Q/viewform"
         }
-    }
-    
-    window.onmouseup = () => {
-        track.dataset.mouseDownAt = "0";
-        track.dataset.prevPercentage = track.dataset.percentage;
-    }
-})
+    </script>
+    <header>
+        <h1 style="color: #492980;font-weight: 750;font-size: 60px;">Boston Latin School Debate</h1>
+        <button id="join" onClick="join()">JOIN</button>
+    </header>
+    <main class="content">
+        <section>
+            <p id="thing1">Welcome to the Boston Latin School Speech & Debate website!
+                    We love trying new foods in whatever locations our tournaments take us, bonding over karaoke game nights, and politely yelling at people for awards. (All jokes - we don’t bite :)) If you’re interested in improving your persuasive capacity to win over parents at the dinner table, performing in front of audiences with personalized pieces, or even just to dip your toes for a bit of public speaking experience.
+                </p>
+            </section>
+            <section id="topics">
+                <a href="debate/">
+                    <h2>DEBATE</h2>
+                </a>
+                <a href="congress/">
+                    <h2>CONGRESS</h2>
+                </a>
+                <a href="speech/">
+                    <h2>SPEECH</h2>
+                </a>
+            </section>
+            <section id="images" data-mouse-down-at="0" data-prev-percentage="0">
+                <img src="images/img1.jpeg" alt="" class = "image" draggable="false" >
+                <img src="images/img2.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img3.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img4.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img5.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img6.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img7.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img8.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img9.jpeg" alt="" class = "image" draggable="false">
+                <img src="images/img10.jpeg" alt="" class = "image" draggable="false">
+            </section>
+            <section>
+                <h2>Pledge To Diversity</h2>
+            </section>
+            <section>
+                <h2>Practice Whens & Wheres</h2>
+            </section>
+            <section>
+                <h2>Team Expectations</h2>
+                <p>
+                    Sportsmanship, prep, tourney behavior, we should probs also include practice expectations (varying by event but at least one practice per week! → then mention when they are)
+Slides 13-14
+                </p>
+            </section>
+            </main>
 
+
+</body>
+</html>
