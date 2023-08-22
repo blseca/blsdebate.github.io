@@ -1,6 +1,5 @@
-const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card", "Nuclear War", "USFG", "Voting", "Union", "Rails", "Nuclear Power", "Liberty", "Freedom"]
-const wordCount = 25; //window.innerWidth / 40
-//turned into 25 because was getting laggy when minimized
+const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
+const wordCount = window.innerWidth / 40
 window.addEventListener('load',()=>{
     const header = document.querySelector("header")
     for(let i = 0; i < wordCount; i++){
@@ -16,15 +15,14 @@ window.addEventListener('load',()=>{
         p.setAttribute("depth", depth)
         header.appendChild(p)
     }
-
-    window.addEventListener('scroll', ()=>{
+    window.addEventListener('scroll', (e)=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
             depth = parseFloat(word.getAttribute("depth"))
             word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
         }
     })
-
+    
     document.querySelector("#join").addEventListener('mouseover',()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
@@ -49,7 +47,7 @@ window.addEventListener('load',()=>{
         const nextPercentage = Math.max(Math.min(nextPercentageUncon, 0), -100);
         track.dataset.percentage = nextPercentage;
         track.animate({
-            transform: `translate(${nextPercentage }%, 0%)`
+            transform: `translate(${nextPercentage}%, 0%)`
         }, { duration: 1200, fill: "forwards" });
           
         for(const image of track.getElementsByClassName("image")) {
