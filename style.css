@@ -90,6 +90,7 @@ header p{
 section{
     padding: 30px;
     margin: auto;
+    max-width: 900px;
 }
 
 #thing1 {
@@ -120,9 +121,9 @@ section{
 
 #topics > a:hover {
     background-color: rgb(97, 26, 196);
+    border: 2px solid transparent;
     color: white;
     transform: scale(1.1);
-    border-radius: 10px;
 }
 
 #topics > a:active {
