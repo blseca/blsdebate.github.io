@@ -7,12 +7,12 @@ body, html{
     height: 100%;
     font-family: "lora", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
-}
-
-body{
     overflow-x: hidden;
 }
-
+div {
+    
+    position: relative;
+}
 * {
     box-sizing: border-box;
 }
@@ -89,9 +89,7 @@ header p{
 
 section{
     padding: 30px;
-    max-width: 900px;
     margin: auto;
-    position: relative;
 }
 
 #thing1 {
@@ -139,7 +137,7 @@ section{
     margin: 0rem;
     overflow:visible;
     user-select: none;
-    left: 50%
+    transform: translate(50%, 0%)
 }
 
 #images > .image {
