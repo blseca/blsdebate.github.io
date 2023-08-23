@@ -50,18 +50,18 @@ if(track.dataset.mouseDownAt === "0") return;
 
     const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 50), -150);
     
     track.dataset.percentage = nextPercentage;
 
     track.animate({
         transform: `translate(${nextPercentage}%, 0%)`
         
-    }, { duration: 1200, fill: "forwards" });
+    }, { duration: 2200, fill: "forwards" });
     for(const image of track.getElementsByClassName("image")) {
         image.animate({
-          objectPosition: `${100 + nextPercentage}% center`
-        }, { duration: 1200, fill: "forwards" });
+          objectPosition: `${100 + Math.max(Math.min(nextPercentageUnconstrained, 0), -100)}% center`
+        }, { duration: 2200, fill: "forwards" });
       }
     }
   
