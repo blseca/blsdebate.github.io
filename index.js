@@ -22,7 +22,7 @@ window.addEventListener('load',()=>{
             word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
         }
     })
-    
+
     document.querySelector("#join").addEventListener('mouseover',()=>{
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
@@ -33,50 +33,19 @@ window.addEventListener('load',()=>{
             word.style.scale = size
         }
     })
-//     const track = document.getElementById("images");
+    let imageContainer = document.querySelector("#images")
+    let repeat1 = document.querySelector('#second')
+    console.log(repeat1.getBoundingClientRect().x)
+    let repeat2 = document.querySelector('#third')
+    console.log(window.innerWidth)
 
-//     const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
-  
-//     const handleOnUp = () => {
-//       track.dataset.mouseDownAt = "0";  
-//       track.dataset.prevPercentage = track.dataset.percentage;
-//     }
-  
-//     const handleOnMove = e => {
-// if(track.dataset.mouseDownAt === "0") return;
-
-//     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-//         maxDelta = window.innerWidth / 2;
-
-//     const percentage = (mouseDelta / maxDelta) * -100,
-//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 50), -150);
-    
-//     track.dataset.percentage = nextPercentage;
-
-//     track.animate({
-//         transform: `translate(${nextPercentage}%, 0%)`
-        
-//     }, { duration: 2200, fill: "forwards" });
-//     for(const image of track.getElementsByClassName("image")) {
-//         image.animate({
-//           objectPosition: `${100 + Math.max(Math.min(nextPercentageUnconstrained, 0), -100)}% center`
-//         }, { duration: 2200, fill: "forwards" });
-//       }
-//     }
-  
-//     /* -- Had to add extra lines for touch events -- */
-  
-//     window.onmousedown = e => handleOnDown(e);
-  
-//     window.ontouchstart = e => handleOnDown(e.touches[0]);
-  
-//     window.onmouseup = e => handleOnUp(e);
-  
-//     window.ontouchend = e => handleOnUp(e.touches[0]);
-  
-//     window.onmousemove = e => handleOnMove(e);
-  
-//     window.ontouchmove = e => handleOnMove(e.touches[0]);
+    imageContainer.scrollLeft = repeat1.getBoundingClientRect().x
+    imageContainer.addEventListener('scroll', (e)=>{
+        if(repeat2.getBoundingClientRect().x < 0){
+            e.target.scrollLeft = -repeat1.getBoundingClientRect().x
+        }
+        if(repeat1.getBoundingClientRect().x > window.innerWidth){
+            e.target.scrollLeft = (repeat2.getBoundingClientRect().x) * 2  - window.innerWidth * 3
+        }
+    })
 })
-

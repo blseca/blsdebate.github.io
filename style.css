@@ -15,7 +15,7 @@ body{
 }
 
 div {
-    
+
     position: relative;
 }
 * {
@@ -94,17 +94,18 @@ header p{
     font-weight: bold;
     transition: all 0.2s ease;
     text-decoration: none;
+    color: black;
 }
 
-#topics > a:hover{
+#topics a:hover{
     background-color: black;
     color: white;
 }
 
 
 #join{
-    background-color: #492980 !important;
-    color: white;
+    background-color: #492980;
+    color: white !important;
 }
 
 
@@ -122,15 +123,18 @@ section{
 }
 
 #images {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 5px;
-    /* margin: 0rem; */
-    overflow:hidden;
+    margin: 0rem;
+    max-width: unset;
+    padding: 0px;
+    overflow:scroll;
     user-select: none;
+    display: flex;
 }
 
-#images > .image {
+#images img {
+    flex-shrink: 1;
+    flex-grow: 0;
     object-fit: cover;
-    height: 30vmin;
+    height: 50vmin;
+    width: unset;
 }
