@@ -4,11 +4,16 @@ body, html{
     margin: 0rem;
     padding: 0;
     width: 100%;
-    height: 100%;
     font-family: "lora", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
-    overflow-x: hidden;
 }
+
+body{
+    overflow-x: scroll;
+    z-index: 0;
+    position: relative;
+}
+
 div {
     
     position: relative;
@@ -19,7 +24,7 @@ div {
 
 img{
     width:100%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 p{
@@ -41,10 +46,10 @@ h2{
 header {
     background-image: linear-gradient(to top, #FFFFFF,#fff5fe 10%, #eaccf4 40%, #A080E1 70%,  #5C509E 90%, #382D73);
     position: relative;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
     height: 500px;
-    margin-bottom: -50px;
+    margin-bottom: -100px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -88,8 +93,10 @@ header p{
 }
 
 section{
-    padding: 30px;
+    padding: 0px 30px;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
     max-width: 900px;
 }
 
@@ -100,50 +107,47 @@ section{
 
 
 #topics{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     gap: 50px;
+    justify-content: space-around;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 #topics > a {
-    display: block;
     text-decoration: none;
     color: initial;
 
-    padding: 20px;
-    border: 2px solid black;
+    /* padding: 20px; */
+    /* border: 2px solid black; */
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
     transition: all 0.35s;
 }
 
 #topics > a:hover {
-    background-color: rgb(97, 26, 196);
-    border: 2px solid transparent;
-    color: white;
+    /* background-color: rgb(97, 26, 196); */
+    /* border: 2px solid transparent; */
+    color: rgb(97, 26, 196);
     transform: scale(1.1);
 }
 
 #topics > a:active {
-    background-color: rgb(97, 26, 196);
-    color: white;
     transform: scale(0.9);
 }
 
 #images {
-    display: flex;
-    gap: 4vmin;
-    margin: 0rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    /* margin: 0rem; */
     overflow:visible;
     user-select: none;
-    transform: translate(50%, 0%)
 }
 
 #images > .image {
-    object-position: 100% 50%;
     object-fit: cover;
-    height: 56vmin;
-    width: 40vmin;
+    height: 30vmin;
 }
