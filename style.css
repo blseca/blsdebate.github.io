@@ -48,8 +48,9 @@ header {
     position: relative;
     z-index: -1;
     width: 100%;
-    height: 500px;
-    margin-bottom: -100px;
+    padding: 120px 30px;
+    /* height: 500px; */
+    margin-bottom: -40px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -66,31 +67,44 @@ header p{
     font-size: 2em;
     opacity: 0.5;
     font-weight: lighter;
-    font-family: sans-serif;
     pointer-events: none;
     z-index: -1;
     transition: scale 2s ease, rotate 2s ease, filter 2s ease;
 }
 
-#join{
-    background-color: #492980;
-    border:none;
-    font-size: 1.5em;
-    padding: 10px 30px;
-    color: white;
-    font-weight: bold;
-    transition: transform 0.2s ease;
+#topics{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    /* border-radius: 50px */
+    overflow: hidden;
+    border: 2px solid #492980;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    margin: 0px;
 }
 
-#join:hover{
-    transform: scale(1.2);
+#topics > a{
+    display: block;
+    border:none;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    padding: 10px 30px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+#topics > a:hover{
     background-color: black;
     color: white;
 }
 
-#join:active{
-    transform: scale(0.9);
+
+#join{
+    background-color: #492980;
+    color: white;
 }
+
 
 section{
     padding: 0px 30px;
@@ -105,45 +119,12 @@ section{
     font-size: 130%;
 }
 
-
-#topics{
-    display: flex;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    gap: 50px;
-    justify-content: space-around;
-    text-decoration: underline;
-    text-underline-position: under;
-}
-
-#topics > a {
-    text-decoration: none;
-    color: initial;
-
-    /* padding: 20px; */
-    /* border: 2px solid black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.35s;
-}
-
-#topics > a:hover {
-    /* background-color: rgb(97, 26, 196); */
-    /* border: 2px solid transparent; */
-    color: rgb(97, 26, 196);
-    transform: scale(1.1);
-}
-
-#topics > a:active {
-    transform: scale(0.9);
-}
-
 #images {
     display: grid;
     grid-template-columns: auto auto;
     gap: 5px;
     /* margin: 0rem; */
-    overflow:visible;
+    overflow:hidden;
     user-select: none;
 }
 
