@@ -75,9 +75,9 @@ header p{
 }
 
 #topics{
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
     /* border-radius: 50px */
     overflow: hidden;
     border: 2px solid #492980;
@@ -85,7 +85,7 @@ header p{
     margin: 0px;
 }
 
-#topics > a{
+#topics a{
     display: block;
     border:none;
     font-family: sans-serif;
@@ -103,7 +103,7 @@ header p{
 
 
 #join{
-    background-color: #492980;
+    background-color: #492980 !important;
     color: white;
 }
 
