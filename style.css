@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap');
 
 body, html{
     margin: 0rem;
     padding: 0;
     width: 100%;
-    font-family: "lora", serif;
+    font-family: "EB Garamond", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
 }
 
@@ -31,9 +31,11 @@ p{
     font-size: 18px;
     line-height: 1.5;
 }
-p.banner-word {
-    font-family: "Lora", serif;
+
+h1, h2 {
+    font-family: 'Cormorant Garamond';
 }
+
 h1{
     font-size: 2.5em;
     text-align: center;
