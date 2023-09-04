@@ -121,17 +121,23 @@ section{
     text-align: center;
     font-size: 130%;
 }
-
 #images {
     margin: 0rem;
     max-width: unset;
     padding: 0px;
-    overflow:scroll;
+    overflow:hidden;
     user-select: none;
     display: flex;
+
+    left: 0;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 #images img {
+    margin: 2vmin;
     flex-shrink: 1;
     flex-grow: 0;
     object-fit: cover;
