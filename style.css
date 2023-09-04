@@ -144,3 +144,11 @@ section{
     height: 50vmin;
     width: unset;
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
