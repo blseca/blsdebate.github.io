@@ -1,6 +1,6 @@
 const words = ["MSDL", "Words Matter", "Speak Now", "Resolved", "Affirm", "Negate", "Rebutt", "Turn", "Framework", "Value", "Philosophy", "Observation", "Contention", "Case", "Card"]
 const wordCount = window.innerWidth / 40
-window.addEventListener('load',()=>{
+function setup(){
     const header = document.querySelector("header")
     for(let i = 0; i < wordCount; i++){
         let p = document.createElement("p")
@@ -48,4 +48,4 @@ window.addEventListener('load',()=>{
             e.target.scrollLeft = (repeat2.getBoundingClientRect().x) * 2  - window.innerWidth * 3
         }
     })
-})
+}
