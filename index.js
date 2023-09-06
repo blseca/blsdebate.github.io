@@ -34,18 +34,5 @@ function setup(){
         }
     })
     let imageContainer = document.querySelector("#images")
-    let repeat1 = document.querySelector('#second')
-    console.log(repeat1.getBoundingClientRect().x)
-    let repeat2 = document.querySelector('#third')
-    console.log(window.innerWidth)
-
-    imageContainer.scrollLeft = repeat1.getBoundingClientRect().x
-    imageContainer.addEventListener('scroll', (e)=>{
-        if(repeat2.getBoundingClientRect().x < 0){
-            e.target.scrollLeft = -repeat1.getBoundingClientRect().x
-        }
-        if(repeat1.getBoundingClientRect().x > window.innerWidth){
-            e.target.scrollLeft = (repeat2.getBoundingClientRect().x) * 2  - window.innerWidth * 3
-        }
-    })
+    imageContainer.appendChild(imageContainer.querySelector("div").cloneNode(true))
 }

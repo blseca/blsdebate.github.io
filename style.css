@@ -130,8 +130,13 @@ section{
     display: flex;
 
     left: 0;
+
+}
+
+#images div{
+    display: flex;
     animation-name: scroll;
-    animation-duration: 10s;
+    animation-duration: 50s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -149,6 +154,6 @@ section{
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
