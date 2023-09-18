@@ -63,7 +63,7 @@ header {
 }
 
 header p{
-    position: absolute;
+    position: fixed;
     mix-blend-mode: hard-light;
     will-change: transform;
     font-size: 2em;
@@ -82,7 +82,9 @@ header p{
     overflow: hidden;
     border: 2px solid #492980;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
-    margin: 0px;
+    margin: auto;
+    z-index: 10;
+    width: fit-content;
 }
 
 #topics a{

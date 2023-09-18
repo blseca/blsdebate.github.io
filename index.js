@@ -8,9 +8,13 @@ function setup(){
         p.innerHTML = words[Math.floor(Math.random()*words.length)]
         let depth = Math.random()*15 - 3
         let size = 3/(depth/3+2);
-        p.style.left = `${(Math.random())*100}vw`
-        p.style.top = `${(Math.random()-0.1)*600}px`
-        p.style.filter = `blur(${Math.abs(depth-3)}px)`
+        let left = (Math.random()-0.5)*100/size + 50
+        let top = (Math.random()-0.5)*400/size + 200
+        p.style.left = `${left}vw`
+        p.style.top = `${top}px`
+        p.style.filter = `blur(${Math.abs(depth/2)}px)`
+        p.style.transform = `translate(-50%, -50%)`
+        p.style.transformOrigin = `${-left+50}vw ${-top+250}px`
         p.style.scale = size
         p.setAttribute("depth", depth)
         header.appendChild(p)
@@ -19,7 +23,7 @@ function setup(){
         const words = document.querySelectorAll('.banner-word')
         for(let word of words){
             depth = parseFloat(word.getAttribute("depth"))
-            word.style.translate = `0px ${-window.scrollY/(depth/2 + 1.5)}px`
+            word.style.translate = `0px ${-window.scrollY/((depth+3)/3)}px`
         }
     })
 
@@ -29,8 +33,10 @@ function setup(){
             let depth = parseFloat(word.getAttribute("depth"))
             depth = (Math.random() *15 -3 + depth)/2
             let size = 3/(depth/3+2);
-            word.style.filter = `blur(${Math.min(Math.abs(depth-3), 10)}px)`
+            word.style.filter = `blur(${Math.min(Math.abs(depth/2), 10)}px)`
             word.style.scale = size
+            word.setAttribute("depth", depth)
+            depth = parseFloat(word.getAttribute("depth"))
         }
     })
     let imageContainer = document.querySelector("#images")
