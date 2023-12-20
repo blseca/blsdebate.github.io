@@ -6,6 +6,7 @@ body, html{
     width: 100%;
     font-family: "EB Garamond", serif;
     /* background: linear-gradient(red, orange, yellow, green, cyan, blue, indigo, purple, pink); */
+    scroll-behavior: smooth;
 }
 
 body{
@@ -14,13 +15,15 @@ body{
     position: relative;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 div {
 
     position: relative;
 }
-* {
-    box-sizing: border-box;
-}
+
 
 img{
     width:100%;
@@ -30,6 +33,12 @@ img{
 p, li{
     font-size: 18px;
     line-height: 1.5;
+}
+
+a{
+    font-size: 18px;
+    color: #842ce9;
+    text-underline-offset: 5px;
 }
 
 h1, h2 {
@@ -44,6 +53,41 @@ h1{
 h2{
     font-size: 2em;
 }
+
+nav{
+    background-color: #492980;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 20px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+nav img{
+    height: 1em;
+    width: 1em; 
+    margin: calc(-0.5em + 0.5rem) 10px calc(-0.5em + 0.5rem) 0;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.spacer{
+    flex-grow: 1;
+}
+
 
 header {
     background-image: linear-gradient(to top, #FFFFFF,#fff5fe 10%, #eaccf4 40%, #A080E1 70%,  #5C509E 90%, #382D73);
@@ -73,6 +117,15 @@ header p{
     z-index: -1;
     transition: scale 2s ease, rotate 2s ease, filter 2s ease;
 }
+
+section{
+    padding: 0px 30px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 900px;
+}
+
 
 #topics{
     background-color: white;
@@ -114,13 +167,7 @@ header p{
     color: white !important;
 }
 
-section{
-    padding: 0px 30px;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    max-width: 900px;
-}
+
 
 #thing1 {
     text-align: center;
@@ -163,6 +210,26 @@ section{
   }
 }
 
+#officers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: lightgray;
+    max-width: unset;
+}
+
+#officers h2{
+    width: 100%;
+    text-align: center;
+}
+
 #footer-image{
     filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.5));
+}
+
+#ECA{
+    font-family: monospace;
+    font-style: italic;
 }
