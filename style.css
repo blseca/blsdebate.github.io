@@ -266,7 +266,7 @@ section{
 }
 
 .officerCard h3,.officerCard p{
-    font-family: sans-serif;
+    font-family: "Futura PT";
     position: absolute;
     color: white;
     z-index: 10;
