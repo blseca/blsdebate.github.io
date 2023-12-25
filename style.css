@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
 
 body, html{
     margin: 0rem;
@@ -119,6 +120,12 @@ header p{
     transition: scale 2s ease, rotate 2s ease, filter 2s ease;
 }
 
+header h1{
+    color: #492980;
+    font-weight: 750;
+    font-size: 70px;
+}
+
 section{
     padding: 0px 30px;
     margin: auto;
@@ -144,7 +151,7 @@ section{
 #topics a{
     display: block;
     border:none;
-    font-family: sans-serif;
+    font-family: "Montserrat",sans-serif;
     font-size: 1.5em;
     padding: 10px;
     text-align: center;
@@ -229,11 +236,11 @@ section{
 }
 
 .officerCard{
+    font-family: "Montserrat",sans-serif;
     position: relative;
     background-color: white;
     /* padding: 20px; */
     /* overflow: hidden; */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.383);
     width: 200px;
     height: 300px;
     /* padding: 20px; */
@@ -266,7 +273,6 @@ section{
 }
 
 .officerCard h3,.officerCard p{
-    font-family: "Futura PT";
     position: absolute;
     color: white;
     z-index: 10;
@@ -286,9 +292,6 @@ section{
     
 }
 
-#footer-image{
-    filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.5));
-}
 
 #ECA{
     font-family: monospace;
